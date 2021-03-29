@@ -12,3 +12,9 @@ Lab5: Гипотеза о дисперсии
 
 
 Запуск программ осуществляется через файл .exe в папке release
+
+Из питона в .exe команда:
+pyinstaller —onefile main.py
+
+Из form.ui - файл формы в питон:
+pyuic5 -x name.ui -o name.py
