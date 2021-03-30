@@ -19,6 +19,7 @@
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -40,6 +41,7 @@ public:
     QLineEdit *lineEdit;
     QLabel *label_6;
     QLineEdit *lineEdit_4;
+    QTextBrowser *textBrowser;
     QLabel *label_5;
     QFormLayout *formLayout_2;
     QLabel *label_7;
@@ -47,6 +49,10 @@ public:
     QLabel *label_8;
     QLineEdit *lineEdit_6;
     QLineEdit *lineEdit_7;
+    QHBoxLayout *horizontalLayout_2;
+    QTextBrowser *textBrowser_2;
+    QTextBrowser *textBrowser_3;
+    QTextBrowser *textBrowser_4;
     QPushButton *pushButton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
@@ -124,6 +130,12 @@ public:
 
         horizontalLayout->addLayout(formLayout);
 
+        textBrowser = new QTextBrowser(centralwidget);
+        textBrowser->setObjectName(QString::fromUtf8("textBrowser"));
+        textBrowser->setStyleSheet(QString::fromUtf8("background-color: #FBF0F0;"));
+
+        horizontalLayout->addWidget(textBrowser);
+
 
         verticalLayout->addLayout(horizontalLayout);
 
@@ -164,6 +176,29 @@ public:
 
 
         verticalLayout->addLayout(formLayout_2);
+
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
+        textBrowser_2 = new QTextBrowser(centralwidget);
+        textBrowser_2->setObjectName(QString::fromUtf8("textBrowser_2"));
+        textBrowser_2->setStyleSheet(QString::fromUtf8("background-color: #FBF0F0;"));
+
+        horizontalLayout_2->addWidget(textBrowser_2);
+
+        textBrowser_3 = new QTextBrowser(centralwidget);
+        textBrowser_3->setObjectName(QString::fromUtf8("textBrowser_3"));
+        textBrowser_3->setStyleSheet(QString::fromUtf8("background-color: #FBF0F0;"));
+
+        horizontalLayout_2->addWidget(textBrowser_3);
+
+        textBrowser_4 = new QTextBrowser(centralwidget);
+        textBrowser_4->setObjectName(QString::fromUtf8("textBrowser_4"));
+        textBrowser_4->setStyleSheet(QString::fromUtf8("background-color: #FBF0F0;"));
+
+        horizontalLayout_2->addWidget(textBrowser_4);
+
+
+        verticalLayout->addLayout(horizontalLayout_2);
 
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));

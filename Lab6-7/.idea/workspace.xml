@@ -21,6 +21,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
@@ -59,6 +60,11 @@
       <workItem from="1617008790685" duration="2655000" />
       <workItem from="1617013837840" duration="457000" />
       <workItem from="1617014849135" duration="392000" />
+      <workItem from="1617100656994" duration="102000" />
+      <workItem from="1617100795229" duration="103000" />
+      <workItem from="1617100976801" duration="43000" />
+      <workItem from="1617102626380" duration="159000" />
+      <workItem from="1617102825818" duration="152000" />
     </task>
     <servers />
   </component>
@@ -66,6 +72,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="1258" y="416" key="#Custom_Plugin_Repositories" timestamp="1617100697150">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1258" y="416" key="#Custom_Plugin_Repositories/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1617100697150" />
     <state width="1036" height="281" key="GridCell.Tab.0.bottom" timestamp="1617014300510">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -98,6 +108,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1033" height="347" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1617011462800" />
+    <state x="880" y="165" key="SettingsEditor" timestamp="1617101010828">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="880" y="165" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1617101010828" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Lab6_7$main.coverage" NAME="main Coverage Results" MODIFIED="1617014010804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

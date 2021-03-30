@@ -97,6 +97,13 @@ font-family: Aero Matics;</string>
         </item>
        </layout>
       </item>
+      <item>
+       <widget class="QTextBrowser" name="textBrowser">
+        <property name="styleSheet">
+         <string notr="true">background-color: #FBF0F0;</string>
+        </property>
+       </widget>
+      </item>
      </layout>
     </item>
     <item>
@@ -138,6 +145,31 @@ font-family: Aero Matics;</string>
       </item>
       <item row="2" column="1">
        <widget class="QLineEdit" name="lineEdit_7">
+        <property name="styleSheet">
+         <string notr="true">background-color: #FBF0F0;</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QTextBrowser" name="textBrowser_2">
+        <property name="styleSheet">
+         <string notr="true">background-color: #FBF0F0;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QTextBrowser" name="textBrowser_3">
+        <property name="styleSheet">
+         <string notr="true">background-color: #FBF0F0;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QTextBrowser" name="textBrowser_4">
         <property name="styleSheet">
          <string notr="true">background-color: #FBF0F0;</string>
         </property>
