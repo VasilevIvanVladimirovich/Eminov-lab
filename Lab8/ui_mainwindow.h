@@ -22,6 +22,7 @@
 #include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include <qcustomplot.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -53,6 +54,7 @@ public:
     QTextBrowser *textBrowser_2;
     QTextBrowser *textBrowser_3;
     QTextBrowser *textBrowser_4;
+    QCustomPlot *customPlot;
     QPushButton *pushButton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
@@ -61,7 +63,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(519, 515);
+        MainWindow->resize(539, 872);
         QFont font;
         font.setFamily(QString::fromUtf8("Aero Matics"));
         font.setBold(true);
@@ -132,6 +134,7 @@ public:
 
         textBrowser = new QTextBrowser(centralwidget);
         textBrowser->setObjectName(QString::fromUtf8("textBrowser"));
+        textBrowser->setMaximumSize(QSize(200, 50));
         textBrowser->setStyleSheet(QString::fromUtf8("background-color: #FBF0F0;"));
 
         horizontalLayout->addWidget(textBrowser);
@@ -200,6 +203,12 @@ public:
 
         verticalLayout->addLayout(horizontalLayout_2);
 
+        customPlot = new QCustomPlot(centralwidget);
+        customPlot->setObjectName(QString::fromUtf8("customPlot"));
+        customPlot->setMinimumSize(QSize(1000, 300));
+
+        verticalLayout->addWidget(customPlot);
+
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
         pushButton->setStyleSheet(QString::fromUtf8("background-color: #B8B0B0;"));
@@ -209,7 +218,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 519, 35));
+        menubar->setGeometry(QRect(0, 0, 539, 35));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));

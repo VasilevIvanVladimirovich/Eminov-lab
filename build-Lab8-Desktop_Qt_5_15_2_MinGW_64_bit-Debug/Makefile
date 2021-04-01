@@ -227,6 +227,7 @@ Makefile: ../Lab8/Lab8.pro ../../../Framework/5.15.2/mingw81_64/mkspecs/win32-g+
 		../../../Framework/5.15.2/mingw81_64/mkspecs/features/qt_config.prf \
 		../../../Framework/5.15.2/mingw81_64/mkspecs/win32-g++/qmake.conf \
 		../../../Framework/5.15.2/mingw81_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../../Framework/5.15.2/mingw81_64/mkspecs/features/exclusive_builds.prf \
 		../../../Framework/5.15.2/mingw81_64/mkspecs/features/toolchain.prf \
 		../../../Framework/5.15.2/mingw81_64/mkspecs/features/default_pre.prf \
@@ -251,11 +252,11 @@ Makefile: ../Lab8/Lab8.pro ../../../Framework/5.15.2/mingw81_64/mkspecs/win32-g+
 		../../../Framework/5.15.2/mingw81_64/mkspecs/features/yacc.prf \
 		../../../Framework/5.15.2/mingw81_64/mkspecs/features/lex.prf \
 		../Lab8/Lab8.pro \
+		../../../Framework/5.15.2/mingw81_64/lib/Qt5PrintSupport.prl \
 		../../../Framework/5.15.2/mingw81_64/lib/Qt5Widgets.prl \
 		../../../Framework/5.15.2/mingw81_64/lib/Qt5Gui.prl \
 		../../../Framework/5.15.2/mingw81_64/lib/Qt5Core.prl \
 		../../../Framework/5.15.2/mingw81_64/lib/qtmain.prl \
-		.qmake.stash \
 		../../../Framework/5.15.2/mingw81_64/mkspecs/features/build_pass.prf
 	$(QMAKE) -o Makefile ..\Lab8\Lab8.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 ../../../Framework/5.15.2/mingw81_64/mkspecs/features/spec_pre.prf:
@@ -415,6 +416,7 @@ Makefile: ../Lab8/Lab8.pro ../../../Framework/5.15.2/mingw81_64/mkspecs/win32-g+
 ../../../Framework/5.15.2/mingw81_64/mkspecs/features/qt_config.prf:
 ../../../Framework/5.15.2/mingw81_64/mkspecs/win32-g++/qmake.conf:
 ../../../Framework/5.15.2/mingw81_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../../Framework/5.15.2/mingw81_64/mkspecs/features/exclusive_builds.prf:
 ../../../Framework/5.15.2/mingw81_64/mkspecs/features/toolchain.prf:
 ../../../Framework/5.15.2/mingw81_64/mkspecs/features/default_pre.prf:
@@ -439,11 +441,11 @@ Makefile: ../Lab8/Lab8.pro ../../../Framework/5.15.2/mingw81_64/mkspecs/win32-g+
 ../../../Framework/5.15.2/mingw81_64/mkspecs/features/yacc.prf:
 ../../../Framework/5.15.2/mingw81_64/mkspecs/features/lex.prf:
 ../Lab8/Lab8.pro:
+../../../Framework/5.15.2/mingw81_64/lib/Qt5PrintSupport.prl:
 ../../../Framework/5.15.2/mingw81_64/lib/Qt5Widgets.prl:
 ../../../Framework/5.15.2/mingw81_64/lib/Qt5Gui.prl:
 ../../../Framework/5.15.2/mingw81_64/lib/Qt5Core.prl:
 ../../../Framework/5.15.2/mingw81_64/lib/qtmain.prl:
-.qmake.stash:
 ../../../Framework/5.15.2/mingw81_64/mkspecs/features/build_pass.prf:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ..\Lab8\Lab8.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"

@@ -19,8 +19,10 @@
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include <qcustomplot.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -40,6 +42,7 @@ public:
     QLineEdit *lineEdit;
     QLabel *label_6;
     QLineEdit *lineEdit_4;
+    QTextBrowser *textBrowser;
     QLabel *label_5;
     QFormLayout *formLayout_2;
     QLabel *label_7;
@@ -47,6 +50,11 @@ public:
     QLabel *label_8;
     QLineEdit *lineEdit_6;
     QLineEdit *lineEdit_7;
+    QCustomPlot *customPlot;
+    QHBoxLayout *horizontalLayout_2;
+    QTextBrowser *textBrowser_2;
+    QTextBrowser *textBrowser_3;
+    QTextBrowser *textBrowser_4;
     QPushButton *pushButton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
@@ -55,7 +63,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(519, 515);
+        MainWindow->resize(539, 872);
         QFont font;
         font.setFamily(QString::fromUtf8("Aero Matics"));
         font.setBold(true);
@@ -124,6 +132,13 @@ public:
 
         horizontalLayout->addLayout(formLayout);
 
+        textBrowser = new QTextBrowser(centralwidget);
+        textBrowser->setObjectName(QString::fromUtf8("textBrowser"));
+        textBrowser->setMaximumSize(QSize(200, 50));
+        textBrowser->setStyleSheet(QString::fromUtf8("background-color: #FBF0F0;"));
+
+        horizontalLayout->addWidget(textBrowser);
+
 
         verticalLayout->addLayout(horizontalLayout);
 
@@ -162,8 +177,36 @@ public:
 
         formLayout_2->setWidget(2, QFormLayout::FieldRole, lineEdit_7);
 
+        customPlot = new QCustomPlot(centralwidget);
+        customPlot->setObjectName(QString::fromUtf8("customPlot"));
+
+        formLayout_2->setWidget(3, QFormLayout::FieldRole, customPlot);
+
 
         verticalLayout->addLayout(formLayout_2);
+
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
+        textBrowser_2 = new QTextBrowser(centralwidget);
+        textBrowser_2->setObjectName(QString::fromUtf8("textBrowser_2"));
+        textBrowser_2->setStyleSheet(QString::fromUtf8("background-color: #FBF0F0;"));
+
+        horizontalLayout_2->addWidget(textBrowser_2);
+
+        textBrowser_3 = new QTextBrowser(centralwidget);
+        textBrowser_3->setObjectName(QString::fromUtf8("textBrowser_3"));
+        textBrowser_3->setStyleSheet(QString::fromUtf8("background-color: #FBF0F0;"));
+
+        horizontalLayout_2->addWidget(textBrowser_3);
+
+        textBrowser_4 = new QTextBrowser(centralwidget);
+        textBrowser_4->setObjectName(QString::fromUtf8("textBrowser_4"));
+        textBrowser_4->setStyleSheet(QString::fromUtf8("background-color: #FBF0F0;"));
+
+        horizontalLayout_2->addWidget(textBrowser_4);
+
+
+        verticalLayout->addLayout(horizontalLayout_2);
 
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
@@ -174,7 +217,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 519, 35));
+        menubar->setGeometry(QRect(0, 0, 539, 35));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
