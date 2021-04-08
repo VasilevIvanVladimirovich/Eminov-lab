@@ -38,7 +38,6 @@ def create_tabl():  # Инициализация таблицы
     k = int(ui.lineEdit.text())
     l = int(ui.lineEdit_2.text())
     n = int(ui.lineEdit_3.text())
-    alpha = float(ui.lineEdit_4.text())
 
     ui.tableWidget.setRowCount(k * l)
     ui.tableWidget.setColumnCount(n + 1)
