@@ -15,6 +15,10 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 import sys
+import math
+import numpy as np
+import matplotlib.pyplot as plt
+import scipy.stats
 import numpy as np
 from PyQt5.QtWidgets import QTableWidgetItem
 
@@ -29,6 +33,12 @@ MainWindow.show()
 ui.lineEdit_7.setReadOnly(1)
 ui.lineEdit_6.setReadOnly(1)
 ui.lineEdit_5.setReadOnly(1)
+ui.lineEdit_10.setReadOnly(1)
+ui.lineEdit_11.setReadOnly(1)
+ui.lineEdit_12.setReadOnly(1)
+ui.lineEdit_14.setReadOnly(1)
+ui.lineEdit_15.setReadOnly(1)
+ui.lineEdit_13.setReadOnly(1)
 
 
 def create_tabl():  # Инициализация таблицы
@@ -68,7 +78,12 @@ def reset():
     ui.lineEdit_5.clear()
     ui.lineEdit_8.clear()
     ui.lineEdit_9.clear()
-
+    ui.lineEdit_10.clear()
+    ui.lineEdit_11.clear()
+    ui.lineEdit_12.clear()
+    ui.lineEdit_14.clear()
+    ui.lineEdit_15.clear()
+    ui.lineEdit_13.clear()
 
 def generate_tabl():
     if ui.lineEdit_8.text() == '' or ui.lineEdit_9.text() == '':
@@ -88,12 +103,87 @@ def calculation():
     l = int(ui.lineEdit_2.text())
     n = int(ui.lineEdit_3.text())
     alpha = float(ui.lineEdit_4.text())
-
+    N = k * l * n
     table = []
     for row in range(0, int(ui.tableWidget.rowCount())):
         table.append([])
         for col in range(0, int(ui.tableWidget.columnCount() - 1)):
             table[row].append(float(ui.tableWidget.item(row, col + 1).text()))
+
+    # расчёты
+    c_zero = np.sum(np.square(table))
+    c = np.sum(table)
+    q = c_zero - (c ** 2 / N)
+
+    number_row = 1
+    summa = 0
+    ci = []
+    for row in table:
+        if (number_row % l == 0):
+            summa += sum(row)
+            ci.append(summa)
+            summa = 0
+        else:
+            summa += sum(row)
+        number_row += 1
+
+    q_a = k / N * np.sum(np.square(ci)) - c ** 2 / N
+
+    number_row = 1
+    cj = [0] * l
+    for row in table:
+        cj[number_row % l] += sum(row)
+        number_row += 1
+
+    q_b = l / N * np.sum(np.square(cj)) - c ** 2 / N
+
+    cij = []
+    for row in table:
+        cij.append(sum(row))
+
+    q_a_b = l * k / N * np.sum(np.square(cij)) - q_a - q_b - c ** 2 / N
+
+    q_z = c_zero - 1 / n * np.sum(np.square(cij))
+
+    summa_q = q_a + q_b + q_a_b + q_z
+
+    v = N - 1
+    v_a = k - 1
+    v_b = l - 1
+    v_a_b = k * l - (k + l - 1)
+    v_z = k * l * (n - 1)
+
+    s_pow = q / v
+    s_pow_a = q_a / v_a
+    s_pow_b = q_b / v_b
+    s_pow_a_b = q_a_b / v_a_b
+    s_pow_z = q_z / v_z
+
+    f_a = s_pow_a / s_pow_z
+    f_b = s_pow_b / s_pow_z
+    f_a_b = s_pow_a_b / s_pow_z
+
+    crit_a = scipy.stats.f.ppf(q=1 - alpha, dfn=v_a, dfd=v_z)
+    crit_b = scipy.stats.f.ppf(q=1 - alpha, dfn=v_b, dfd=v_z)
+    crit_a_b = scipy.stats.f.ppf(q=1 - alpha, dfn=v_a_b, dfd=v_z)
+
+    is_a = f_a > crit_a
+    is_b = f_b > crit_b
+    is_a_b = f_a_b > crit_a_b
+
+    # вывод
+    ui.lineEdit_7.setText(str(f_a))
+    ui.lineEdit_6.setText(str(f_b))
+    ui.lineEdit_5.setText(str(f_a_b))
+
+    ui.lineEdit_10.setText(str(crit_a))
+    ui.lineEdit_11.setText(str(crit_b))
+    ui.lineEdit_12.setText(str(crit_a_b))
+
+    ui.lineEdit_14.setText(str(is_a))
+    ui.lineEdit_15.setText(str(is_b))
+    ui.lineEdit_13.setText(str(is_a_b))
+
 
 
 ui.pushButton.clicked.connect(create_tabl)
